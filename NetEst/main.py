@@ -53,7 +53,7 @@ trainA, trainX, trainT,cfTrainT,POTrain,cfPOTrain,valA, valX, valT,cfValT,POVal,
     train_t1z1,train_t1z0,train_t0z0,train_t0z7,train_t0z2,val_t1z1,val_t1z0,val_t0z0,val_t0z7,val_t0z2,test_t1z1,test_t1z0,test_t0z0,test_t0z7,test_t0z2 = utils.load_data(args)
 
 if args.model == "MetaEstimator":
-    model = MetaEstimator()
+    model = MetaEstimator(nfeat=trainX.shape[1], nhid=args.hidden,dropout=args.dropout)
 elif args.model == "NetEstimator":
     model = NetEstimator(Xshape=trainX.shape[1],hidden=args.hidden,dropout=args.dropout)
 elif args.model == "ND":
