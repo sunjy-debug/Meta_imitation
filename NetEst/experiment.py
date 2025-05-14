@@ -475,7 +475,7 @@ class Experiment():
         
         if self.args.model == "MetaEstimator":
             print ("================================Save Baseline prediction...================================")
-            file = "../results/"+self.args.model+"/"+self.args.dataset+"/perf/"+self.args.dataset+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
+            file = ""../results/"+str(self.args.dataset)+"/perf/"+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
         elif self.args.model == "NetEstimator":
             print ("================================Save Baseline prediction...================================")
             file = "../results/baslines/"+self.args.model+"/"+self.args.dataset+"/perf/"+self.args.dataset+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
@@ -498,7 +498,7 @@ class Experiment():
                 "diss_zTrainHalf":self.diss_zTrainHalf,
                 "diss_zValHalf":self.diss_zValHalf}
 
-        with open("../results/"+str(self.args.model)+"/"+str(self.args.dataset)+"/curve/"+"curve_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl", "wb") as f:
+        with open("../results/"+str(self.args.dataset)+"/curve/"+"curve_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl", "wb") as f:
             pkl.dump(data, f)
         print ("================================Save curve done!================================")
 
@@ -510,7 +510,7 @@ class Experiment():
         data = {"embedsTrain": embedsTrain.cpu().detach().numpy(), "embedsTest": embedsTest.cpu().detach().numpy(),
                 "trainT": self.trainT.cpu().detach().numpy(), "testT": self.testT.cpu().detach().numpy(),
                 "trainZ": self.trainZ.cpu().detach().numpy(), "testZ": self.testZ.cpu().detach().numpy()}
-        with open("../results/"+str(self.args.model)+"/"+str(self.args.dataset)+"/embedding/"+"embeddings_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl", "wb") as f:
+        with open("../results/"+str(self.args.dataset)+"/embedding/"+"embeddings_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl", "wb") as f:
             pkl.dump(data, f)
         print ("================================Save embedding done!================================")
 
