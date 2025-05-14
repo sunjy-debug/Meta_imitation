@@ -475,7 +475,7 @@ class Experiment():
         
         if self.args.model == "MetaEstimator":
             print ("================================Save Baseline prediction...================================")
-            file = "../results/MetaEstimator/"+self.args.model+"/"+self.args.dataset+"/perf/"+self.args.dataset+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
+            file = "../results/"+self.args.model+"/"+self.args.dataset+"/perf/"+self.args.dataset+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
         elif self.args.model == "NetEstimator":
             print ("================================Save Baseline prediction...================================")
             file = "../results/baslines/"+self.args.model+"/"+self.args.dataset+"/perf/"+self.args.dataset+"_prediction_expID_"+str(self.args.expID)+"_alpha_"+str(self.args.alpha)+"_gamma_"+str(self.args.gamma)+"_flipRate_"+str(self.args.flipRate)+".pkl"
