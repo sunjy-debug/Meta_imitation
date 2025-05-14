@@ -32,14 +32,14 @@ class MetaEstimator(nn.Module):
 
             # self.out_t00 = nn.ModuleList([nn.Linear(nhid,nhid).cuda() for i in range(n_out)])
             # self.out_t10 = nn.ModuleList([nn.Linear(nhid,nhid).cuda() for i in range(n_out)])
-            self.out_t01 = GraphConvolution(nhid,1).cuda()
-            self.out_t11 = GraphConvolution(nhid,1).cuda()
+            self.out_t01 = GraphConvolution(nhid+1,1).cuda()
+            self.out_t11 = GraphConvolution(nhid+1,1).cuda()
 
         else:
             # self.out_t00 = nn.ModuleList([nn.Linear(nhid,nhid) for i in range(n_out)])
             # self.out_t10 = nn.ModuleList([nn.Linear(nhid,nhid) for i in range(n_out)])
-            self.out_t01 = GraphConvolution(nhid,1)
-            self.out_t11 = GraphConvolution(nhid,1)
+            self.out_t01 = GraphConvolution(nhid+1,1)
+            self.out_t11 = GraphConvolution(nhid+1,1)
 
         self.dropout = dropout
         
