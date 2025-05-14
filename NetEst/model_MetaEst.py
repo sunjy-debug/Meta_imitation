@@ -10,8 +10,8 @@ class MetaEstimator(nn.Module):
 
         if cuda:
             self.gc = nn.ModuleList([GraphConvolution(nfeat, nhid)]).cuda()
-            self.gc.append(nn.Linear(nhid,nhid).cuda)
-            self.gc.append(nn.BatchNorm1d(nhid).cuda)
+            self.gc.append(nn.Linear(nhid,nhid).cuda())
+            self.gc.append(nn.BatchNorm1d(nhid).cuda())
             # for i in range(n_in - 1):
             #     self.gc.append(GraphConvolution(nhid, nhid).cuda())
             #     self.gc.append(nn.Linear(nhid,nhid).cuda)
