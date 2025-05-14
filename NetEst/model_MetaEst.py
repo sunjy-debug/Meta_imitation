@@ -71,8 +71,8 @@ class MetaEstimator(nn.Module):
         #     y10 = F.relu(self.out_t10[i](rep1))
         #     y10 = F.dropout(y10, self.dropout, training=self.training)
         
-        y0 = self.out_t01(rep1).view(-1)
-        y1 = self.out_t11(rep1).view(-1)
+        y0 = self.out_t01(rep1, adj).view(-1)
+        y1 = self.out_t11(rep1, adj).view(-1)
 
         y = torch.where(t > 0,y1,y0)
 
