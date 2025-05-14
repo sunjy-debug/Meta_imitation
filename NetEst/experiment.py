@@ -16,7 +16,7 @@ class Experiment():
         self.args = args
         self.model = model
         if self.args.model=="MetaEstimator":
-            self.optimizer = torch.optim.Adam([{'params':self.model.encoder.parameters()}, {'params':self.model.predictor.parameters()}], lr=self.args.lr, weight_decay=self.args.weight_decay)
+            self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
         elif self.args.model=="NetEstimator":
             self.optimizerD = optim.Adam([{'params':self.model.discriminator.parameters()}],lr=self.args.lrD, weight_decay=self.args.weight_decay)
             self.optimizerD_z = optim.Adam([{'params':self.model.discriminator_z.parameters()}],lr=self.args.lrD_z, weight_decay=self.args.weight_decay)
